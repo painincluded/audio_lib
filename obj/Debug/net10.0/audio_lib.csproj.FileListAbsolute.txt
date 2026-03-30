@@ -26,3 +26,4 @@ C:\Users\fanda\Documents\programming\audio_lib\bin\Debug\net10.0\audio_lib.dll
 C:\Users\fanda\Documents\programming\audio_lib\bin\Debug\net10.0\audio_lib.pdb
 C:\Users\fanda\Documents\programming\audio_lib\obj\Debug\net10.0\audio_lib.genruntimeconfig.cache
 C:\Users\fanda\Documents\programming\audio_lib\obj\Debug\net10.0\ref\audio_lib.dll
+C:\Users\fanda\Documents\programming\audio_lib\obj\Debug\net10.0\audio_lib.sourcelink.json

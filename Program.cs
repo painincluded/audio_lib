@@ -1,25 +1,36 @@
-﻿using System;
-
-namespace audio_lib;
+﻿namespace audio_lib;
 
 public class Program
 {
     static bool running = true;
 
-    static string[] options = ["MenuAdd", "MenuLoad", "MenuShow", "MenuSort", "MenuDelete", "MenuExit", "MenuLanguage"];
+    static string[] options = ["MenuAdd", "MenuLoad", "MenuShow", "MenuSort", "MenuDelete", "MenuLanguage", "MenuExit"];
     static string[] sortBy = ["SortTitle", "SortAuthor", "SortBpm"];
 
     public static void Main()
     {
-        // Initialize with Czech language as default
-        Translator.CurrentLanguage = "cs";
+        // Initialize console styling
+        Console.BackgroundColor = ConsoleColor.Black;
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.Title = "Audio library manager - by Frantisek Saidl";
+        Console.Clear();
+        
+        // Display welcome header
+        Console.WriteLine(Translator.Get("Header"));
+        Console.WriteLine();
 
-        // Load existing track library from file
+        // Initialize with English language as default
+        Translator.CurrentLanguage = "en";
+
+        // Load existing track library from file, or create new if it doesn't exist
         Track.LoadLib();
 
         // Main application loop - runs until user selects exit
         while (running == true)
         {
+            Console.Clear();
+            Console.WriteLine(Translator.Get("Header"));
+            Console.WriteLine();
             DisplayMenu();
             int option = Utils.GetIntInput(Translator.Get("PickOption"), 1, 7);
             HandleMenuOption(option);
@@ -43,33 +54,52 @@ public class Program
             switch (option)
             {
                 case 1:
+                    Console.Clear();
                     Track.CreateTrack();
+                    Console.WriteLine("\nPress any key to continue...");
+                    Console.ReadKey(true);
                     break;
                 case 2:
+                    Console.Clear();
                     HandleLoadTracks();
+                    Console.WriteLine("\nPress any key to continue...");
+                    Console.ReadKey(true);
                     break;
                 case 3:
+                    Console.Clear();
                     Track.ShowTracks();
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey(true);
                     break;
                 case 4:
+                    Console.Clear();
                     HandleSort();
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey(true);
                     break;
                 case 5:
+                    Console.Clear();
                     Track.DeleteTrack();
+                    Console.WriteLine("\nPress any key to continue...");
+                    Console.ReadKey(true);
                     break;
                 case 6:
-                    Track.SaveLib();
-                    running = false;
+                    // HandleLanguageChange has its own Console.Clear()
+                    Translator.HandleLanguageChange();
                     break;
                 case 7:
-                    Translator.HandleLanguageChange();
                     Console.Clear();
+                    Track.SaveLib();
+                    Console.WriteLine("\nExiting... Press any key.");
+                    Console.ReadKey(true);
+                    running = false;
                     break;
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error: {ex.Message}");
+            Console.ReadKey(true);
         }
     }
 

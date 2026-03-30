@@ -46,22 +46,32 @@ public static class Translator
                 CurrentLanguage = "au";
                 break;
         }
-
-        Console.Clear();
     }
 
-    // --- 1. ENGLISH ---
-    // All UI strings for English language
+    // 1. ENGLISH
     private static Dictionary<string, string> englishWords = new Dictionary<string, string>()
     {
+{ "Header", @"
+ █████╗ ██╗   ██╗██████╗ ██╗ ██████╗     ██╗     ██╗██████╗ ██████╗  █████╗ ██████╗ ██╗   ██╗
+██╔══██╗██║   ██║██╔══██╗██║██╔═══██╗    ██║     ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝
+███████║██║   ██║██║  ██║██║██║   ██║    ██║     ██║██████╔╝██████╔╝███████║██████╔╝ ╚████╔╝ 
+██╔══██║██║   ██║██║  ██║██║██║   ██║    ██║     ██║██╔══██╗██╔══██╗██╔══██║██╔══██╗  ╚██╔╝  
+██║  ██║╚██████╔╝██████╔╝██║╚██████╔╝    ███████╗██║██████╔╝██║  ██║██║  ██║██║  ██║   ██║   
+╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝ ╚═════╝
+ ███╗   ███╗ █████╗ ███╗   ██╗ █████╗  ██████╗ ███████╗██████╗ 
+ ████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝ ██╔════╝██╔══██╗
+ ██╔████╔██║███████║██╔██╗ ██║███████║██║  ███╗█████╗  ██████╔╝
+ ██║╚██╔╝██║██╔══██║██║╚██╗██║██╔══██║██║   ██║██╔══╝  ██╔══██╗
+ ██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗██║  ██║
+ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝" },
         { "PickOption", "Pick an option:" },
         { "MenuAdd", "1 add a track" },
         { "MenuLoad", "2 load track(s) from a json file" },
         { "MenuShow", "3 show all tracks" },
         { "MenuSort", "4 sort" },
         { "MenuDelete", "5 delete a track" },
-        { "MenuExit", "6 exit" },
-        { "MenuLanguage", "7 change language" },
+        { "MenuLanguage", "6 change language" },
+        { "MenuExit", "7 exit" },
 
         { "SortMenuText", "sort by: \n 1 title \n 2 author \n 3 bpm" },
         { "SortTitle", "Title" },
@@ -83,10 +93,30 @@ public static class Translator
         { "ErrEmptyInput", "Input cannot be empty. Try again:" }
     };
 
-    // --- 2. CZECH ---
-    // All UI strings for Czech language
+    // 2. CZECH
     private static Dictionary<string, string> czechWords = new Dictionary<string, string>()
     {
+{ "Header", @"
+███████╗██████╗ ██████╗  █████╗ ██╗   ██╗ ██████╗███████╗
+██╔════╝██╔══██╗██╔══██╗██╔══██╗██║   ██║██╔════╝██╔════╝
+███████╗██████╔╝██████╔╝███████║██║   ██║██║     █████╗  
+╚════██║██╔═══╝ ██╔══██╗██╔══██║╚██╗ ██╔╝██║     ██╔══╝  
+███████║██║     ██║  ██║██║  ██║ ╚████╔╝ ╚██████╗███████╗
+╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝   ╚═════╝╚══════╝
+                                                         
+███████╗██╗   ██╗██╗   ██╗██╗  ██╗ ██████╗ ██╗   ██╗███████╗
+╚══███╔╝██║   ██║██║   ██║██║ ██╔╝██╔═══██╗██║   ██║██╔════╝
+  ███╔╝ ██║   ██║██║   ██║█████╔╝ ██║   ██║██║   ██║█████╗  
+ ███╔╝  ╚██╗ ██╔╝╚██╗ ██╔╝██╔═██╗ ██║   ██║╚██╗ ██╔╝██╔══╝  
+███████╗ ╚████╔╝  ╚████╔╝ ██║  ██╗╚██████╔╝ ╚████╔╝ ███████╗
+╚══════╝  ╚═══╝    ╚═══╝  ╚═╝  ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝
+                                                            
+██╗  ██╗███╗   ██╗██╗██╗  ██╗ ██████╗ ██╗   ██╗██╗   ██╗
+██║ ██╔╝████╗  ██║██║██║  ██║██╔═══██╗██║   ██║╚██╗ ██╔╝
+█████╔╝ ██╔██╗ ██║██║███████║██║   ██║██║   ██║ ╚████╔╝ 
+██╔═██╗ ██║╚██╗██║██║██╔══██║██║   ██║██║   ██║  ╚██╔╝  
+██║  ██╗██║ ╚████║██║██║  ██║╚██████╔╝╚██████╔╝   ██║   
+╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝" },
         { "PickOption", "Vyberte možnost:" },
         { "MenuAdd", "1 přidat skladbu" },
         { "MenuLoad", "2 načíst skladbu(y) z json souboru" },
@@ -116,36 +146,49 @@ public static class Translator
         { "ErrEmptyInput", "Vstup nesmí být prázdný. Zkuste to znovu:" }
     };
 
-    // --- 3. AUGUR (Mystical Prophet Speak) ---
-    // All UI strings for Augur language (themed around mystical prophecy)
+    // 3. AUGUR
     private static Dictionary<string, string> augurWords = new Dictionary<string, string>()
     {
-        { "PickOption", "Foretell your path:" },
-        { "MenuAdd", "1 manifest a new sonic vision" },
-        { "MenuLoad", "2 summon visions from the ancient scrolls (json)" },
-        { "MenuShow", "3 reveal all prophesied sounds" },
-        { "MenuSort", "4 bring order to the chaos" },
-        { "MenuDelete", "5 banish a vision into the void" },
-        { "MenuLanguage", "6 change your tongue" },
-        { "MenuExit", "7 return to the mortal realm" },
+        { "Header", @"
+███████╗ ██████╗ ███╗   ██╗██╗ ██████╗     ██████╗ ███████╗ ██████╗ ██╗███████╗████████╗██████╗ ██╗   ██╗
+██╔════╝██╔═══██╗████╗  ██║██║██╔════╝     ██╔══██╗██╔════╝██╔════╝ ██║██╔════╝╚══██╔══╝██╔══██╗╚██╗ ██╔╝
+███████╗██║   ██║██╔██╗ ██║██║██║          ██████╔╝█████╗  ██║  ███╗██║███████╗   ██║   ██████╔╝ ╚████╔╝ 
+╚════██║██║   ██║██║╚██╗██║██║██║          ██╔══██╗██╔══╝  ██║   ██║██║╚════██║   ██║   ██╔══██╗  ╚██╔╝  
+███████║╚██████╔╝██║ ╚████║██║╚██████╗     ██║  ██║███████╗╚██████╔╝██║███████║   ██║   ██║  ██║   ██║   
+╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝ ╚═════╝     ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝   ╚═╝   
+                                                                                                         
+          ██████╗ ██████╗  ██████╗ ████████╗ ██████╗  ██████╗  ██████╗ ██╗     
+          ██╔══██╗██╔══██╗██╔═══██╗╚══██╔══╝██╔═══██╗██╔════╝ ██╔═══██╗██║     
+          ██████╔╝██████╔╝██║   ██║   ██║   ██║   ██║██║      ██║   ██║██║     
+          ██╔═══╝ ██╔══██╗██║   ██║   ██║   ██║   ██║██║      ██║   ██║██║     
+          ██║     ██║  ██║╚██████╔╝   ██║   ╚██████╔╝╚██████╗ ╚██████╔╝███████╗
+          ╚═╝     ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝" },
+        { "PickOption", "select protocol:" },
+        { "MenuAdd", "1 [graft] new frequency" },
+        { "MenuLoad", "2 [fetch] archive from sector (json)" },
+        { "MenuShow", "3 [render] active registry" },
+        { "MenuSort", "4 [resequence] data arrays" },
+        { "MenuDelete", "5 [purge] sequence to null" },
+        { "MenuLanguage", "6 [recode] linguistic output" },
+        { "MenuExit", "7 [disconnect] wetware" },
 
-        { "SortMenuText", "align the stars by: \n 1 true name \n 2 creator \n 3 heartbeat (bpm)" },
-        { "SortTitle", "True Name" },
-        { "SortAuthor", "Creator" },
-        { "SortBpm", "Heartbeat" },
-        { "SortedBy", "The heavens align by" },
+        { "SortMenuText", "resequence registry by: \n 1 identifier \n 2 origin \n 3 pulse (bpm)" },
+        { "SortTitle", "identifier" },
+        { "SortAuthor", "origin" },
+        { "SortBpm", "pulse" },
+        { "SortedBy", "arrays resequenced by" },
 
-        { "EnterFilePath", "speak the incantation of the file's resting place:" },
-        { "CreateTrackTitle", "Manifesting Vision..." },
-        { "PromptTitle", "speak its true name:" },
-        { "PromptAuthor", "who breathed life into it?:" },
-        { "PromptBpm", "what is its heartbeat (bpm)?:" },
-        { "PromptTrackNum", "which vision shall be judged? (number):" },
-        { "RemovedTrack", "the void has consumed vision number:" },
-        { "LibSaved", "The prophecy is safely etched at:" },
+        { "EnterFilePath", "input path to source sector:" },
+        { "CreateTrackTitle", "initiating manifest protocol..." },
+        { "PromptTitle", "assign identifier:" },
+        { "PromptAuthor", "identify origin unit:" },
+        { "PromptBpm", "input pulse frequency (bpm):" },
+        { "PromptTrackNum", "select sequence for termination (index):" },
+        { "RemovedTrack", "sequence purged. sector is now null:" },
+        { "LibSaved", "data etched to local storage at:" },
 
-        { "ErrInvalidNum", "The cosmos rejects this value. Speak a true number:" },
-        { "ErrInvalidNumRange", "The fates demand a number between {0} and {1}:" },
-        { "ErrEmptyInput", "Silence is not an answer. Speak your intent:" }
+        { "ErrInvalidNum", "input corrupted. use valid integer:" },
+        { "ErrInvalidNumRange", "index out of bounds. select between {0} and {1}:" },
+        { "ErrEmptyInput", "null value detected. input required to continue:" }
     };
 }
