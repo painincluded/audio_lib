@@ -14,11 +14,11 @@ public class Utils
         {
             if (min == int.MinValue && max == int.MaxValue)
             {
-                Console.WriteLine("Please enter a valid number:");
+                Console.WriteLine(Translator.Get("ErrInvalidNum"));
             }
             else
             {
-                Console.WriteLine($"Please enter a valid number between {min} and {max}:");
+                Console.WriteLine(Translator.Get("ErrInvalidNumRange").Replace("{0}", min.ToString()).Replace("{1}", max.ToString()));
             }
         }
 
@@ -34,7 +34,7 @@ public class Utils
         // Reject empty or whitespace-only input
         while (string.IsNullOrWhiteSpace(input))
         {
-            Console.WriteLine("Input cannot be empty. Try again:");
+            Console.WriteLine(Translator.Get("ErrEmptyInput"));
             input = Console.ReadLine();
         }
 
@@ -58,11 +58,11 @@ public class Utils
         {
             if (string.IsNullOrWhiteSpace(input))
             {
-                Console.WriteLine($"Input cannot be empty. Try again:");
+                Console.WriteLine(Translator.Get("ErrEmptyInput"));
             }
             else
             {
-                Console.WriteLine($"Input cannot exceed {maxLength} characters. Try again:");
+                Console.WriteLine(Translator.Get("ErrExceedsMaxLength").Replace("{0}", maxLength.ToString()));
             }
             input = Console.ReadLine();
         }
@@ -81,11 +81,11 @@ public class Utils
         {
             if (string.IsNullOrWhiteSpace(filePath))
             {
-                Console.WriteLine("File path cannot be empty. Try again:");
+                Console.WriteLine(Translator.Get("ErrEmptyFilePath"));
             }
             else
             {
-                Console.WriteLine($"File not found: {filePath}. Please enter a valid path:");
+                Console.WriteLine(Translator.Get("ErrFileNotFound").Replace("{0}", filePath));
             }
             filePath = Console.ReadLine();
         }
@@ -102,7 +102,7 @@ public class Utils
         // Keep asking until user enters 'y' or 'n'
         while (response != "y" && response != "n")
         {
-            Console.WriteLine("Please enter 'y' or 'n':");
+            Console.WriteLine(Translator.Get("ErrInvalidConfirmation"));
             response = Console.ReadLine().ToLower();
         }
 

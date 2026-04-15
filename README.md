@@ -15,7 +15,7 @@ A console application for managing a music track library with multilingual suppo
 ## How to Use
 
 1. Run the application
-2. Choose language (default: Czech)
+2. Choose language (default: English)
 3. Select menu option (1-7)
 4. Provide valid inputs as requested
 

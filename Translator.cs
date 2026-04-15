@@ -90,7 +90,11 @@ public static class Translator
 
         { "ErrInvalidNum", "Please enter a valid number:" },
         { "ErrInvalidNumRange", "Please enter a valid number between {0} and {1}:" },
-        { "ErrEmptyInput", "Input cannot be empty. Try again:" }
+        { "ErrEmptyInput", "Input cannot be empty. Try again:" },
+        { "ErrExceedsMaxLength", "Input cannot exceed {0} characters. Try again:" },
+        { "ErrEmptyFilePath", "File path cannot be empty. Try again:" },
+        { "ErrFileNotFound", "File not found: {0}. Please enter a valid path:" },
+        { "ErrInvalidConfirmation", "Please enter 'y' or 'n':" }
     };
 
     // 2. CZECH
@@ -143,7 +147,11 @@ public static class Translator
 
         { "ErrInvalidNum", "Prosím zadejte platné číslo:" },
         { "ErrInvalidNumRange", "Prosím zadejte platné číslo mezi {0} a {1}:" },
-        { "ErrEmptyInput", "Vstup nesmí být prázdný. Zkuste to znovu:" }
+        { "ErrEmptyInput", "Vstup nesmí být prázdný. Zkuste to znovu:" },
+        { "ErrExceedsMaxLength", "Vstup nesmí přesáhnout {0} znaků. Zkuste to znovu:" },
+        { "ErrEmptyFilePath", "Cesta k souboru nesmí být prázdná. Zkuste to znovu:" },
+        { "ErrFileNotFound", "Soubor nenalezen: {0}. Prosím zadejte platnou cestu:" },
+        { "ErrInvalidConfirmation", "Prosím zadejte 'y' nebo 'n':" }
     };
 
     // 3. AUGUR
@@ -189,6 +197,10 @@ public static class Translator
 
         { "ErrInvalidNum", "input corrupted. use valid integer:" },
         { "ErrInvalidNumRange", "index out of bounds. select between {0} and {1}:" },
-        { "ErrEmptyInput", "null value detected. input required to continue:" }
+        { "ErrEmptyInput", "null value detected. input required to continue:" },
+        { "ErrExceedsMaxLength", "buffer overflow. use {0} characters max to avoid cascade:" },
+        { "ErrEmptyFilePath", "path address null. sector location required to proceed:" },
+        { "ErrFileNotFound", "sector not found: {0}. re-input valid path coordinates:" },
+        { "ErrInvalidConfirmation", "protocol error. enter 'y' for yes or 'n' for no:" }
     };
 }
