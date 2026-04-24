@@ -1,29 +1,42 @@
-# Audio Library Manager
 
-## Description
+# Projekt pro ETE15E - Programování
 
-A console application for managing a music track library with multilingual support.
+## Vytvořil: František Saidl <xsaif003@studenti.czu.cz>
 
-## Features
+## Název: Správce hudební knihovny
 
-- Create, view, sort, and delete tracks
-- Load/save track library to JSON files
-- Input validation (BPM range: 0-300, string length limits, file path verification)
-- Delete confirmation to prevent data loss
-- Three language modes: English, Czech, and Augur
+## Popis
 
-## How to Use
+Konzolová aplikace pro správu hudební knihovny. Uživatel může přidávat skladby, načítat je ze souboru, zobrazovat seznam, třídit a mazat. Aplikace podporuje angličtinu, češtinu a augur. Data se ukládají do JSON souboru.
 
-1. Run the application
-2. Choose language (default: English)
-3. Select menu option (1-7)
-4. Provide valid inputs as requested
+## Návrh hlavních proměnných a datových struktur
 
-## File Structure
+- **tracks** – seznam typu List obsahující všechny načtené skladby
+- **defaultFilePath** – cesta k výchozímu souboru knihovny ([Hudba]/AudioLib/library.json)
+- **CurrentLanguage** – vybraný jazyk aplikace ("en", "cs", "au")
 
-- Tracks are stored in `[Music]/AudioLib/library.json`
-- Each track contains: Title, Author, BPM
+## Koncepční popis programu
 
-## Notes
+1. Přidat novou skladbu – zadání názvu, autora a BPM
+2. Načíst skladby ze souboru – importování z JSON souboru
+3. Zobrazit všechny skladby – seznam v tabulkovém formátu
+4. Třídit skladby – podle názvu, autora nebo BPM
+5. Smazat skladbu – s potvrzením uživatele
+6. Změnit jazyk – výběr z dostupných jazyků
+7. Ukončit – uložení a zavření aplikace
 
-Parts of error handling, input validation and styling were created with AI assistance. (Github Copilot)
+## Vstupní omezení
+
+- Název a autor: max. 50 znaků
+- BPM: 0-300
+- Cesta k souboru musí existovat
+
+## AI
+
+Následující funkce byly vytvořeny s pomocí **GitHub Copilot Chat**:
+
+| Funkce | Prompt |
+|--------|--------|
+| `GetLimitedStringInput()` | "Design a function for getting limited string input" |
+| `GetFilePathInput()` | "Design a function to check for file existence" |
+| `GetIntInput()` | "Design a function that can do both a normal int input and limited int input" |

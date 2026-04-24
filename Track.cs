@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text.Json;
 
 namespace audio_lib;
@@ -43,7 +39,7 @@ public class Track
     {
         if (tracks.Count == 0)
         {
-            Console.WriteLine("Library is empty.");
+            Console.WriteLine(Translator.Get("ErrLibraryEmpty"));
             return;
         }
 
@@ -60,7 +56,7 @@ public class Track
         }
         else
         {
-            Console.WriteLine("Delete cancelled.");
+            Console.WriteLine(Translator.Get("DeleteCancelled"));
         }
     }
 
@@ -70,7 +66,7 @@ public class Track
         int current = 1;
 
         Console.WriteLine();
-        Console.WriteLine($"| {"num",-5} | {"title",-20} | {"author",-15} | {"bpm",-5} |");
+        Console.WriteLine($"| {Translator.Get("TableNum"),-5} | {Translator.Get("TableTitle"),-20} | {Translator.Get("TableAuthor"),-15} | {Translator.Get("TableBpm"),-5} |");
         // Format table with separator line for readability
         Console.WriteLine(new string('-', 57));
 
@@ -106,7 +102,7 @@ public class Track
 
         int current = 1;
         Console.WriteLine($"\n--- {Translator.Get("SortedBy")} {sortByTranslatedValue} ---");
-        Console.WriteLine($"| {"num",-5} | {"title",-20} | {"author",-15} | {"bpm",-5} |");
+        Console.WriteLine($"| {Translator.Get("TableNum"),-5} | {Translator.Get("TableTitle"),-20} | {Translator.Get("TableAuthor"),-15} | {Translator.Get("TableBpm"),-5} |");
         Console.WriteLine(new string('-', 57));
 
         foreach (Track track in tempSortedList)
@@ -135,11 +131,11 @@ public class Track
             {
                 tracks.AddRange(newTracks);
                 SaveLib();
-                Console.WriteLine($"Successfully loaded {newTracks.Count} track(s).");
+                Console.WriteLine($"{Translator.Get("SuccessLoadedTracks")} {newTracks.Count} track(s).");
             }
             else
             {
-                Console.WriteLine("Warning: No valid tracks found in the file.");
+                Console.WriteLine(Translator.Get("WarnNoValidTracks"));
             }
         }
         // Catch JSON parsing errors to distinguish from file I/O issues
